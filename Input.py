@@ -105,37 +105,3 @@ def Input(askMessage, errorMessage, authMode):
             print("-- Error in script (could not determine selector)")
         if errorMessage != "":
             print(errorMessage)
-
-# X..Y           -> From X to Y included (integer values)
-# X...Y          -> Same but with float values
-# X..            -> All integer greater or equal to X
-# X...           -> Still same but with float
-# ..Y            -> All integer smaller or equal to Y
-# ...Y           -> Same with floats
-print(f'-- {Input("- Type a integer between 3 and 13 : ", "- Incorrect value !!", "3..13")}')
-print(f'-- {Input("- Type now a float between 0.3 and 25.6 : ", "- Incorrect value !!", "0.3...25.6")}')
-print(f'-- {Input("- Type a integer greater than 3 : ", "- Incorrect value !!", "3..")}')
-print(f'-- {Input("- Type a float greater than 0.3 : ", "- Incorrect value !!", "0.3...")}')
-print(f'-- {Input("- Type a integer smaller than 13 : ", "- Incorrect value !!", "..13")}')
-print(f'-- {Input("- Type a float smaller than 25.6 : ", "- Incorrect value !!", "...25.6")}')
-
-# Foo/Bar        -> foo or bar or f or b, case insensitive
-# ^Foo/Bar/Lorem -> Foo or Bar or Lorem, case sensitive and full word
-print(f'-- {Input("- Continue ? (YES / NO) ", "- Incorrect value !!", "YES/NO")}')
-print(f'-- {Input("- Which is your favourite : cat, dog, other ? ", "- Incorrect value !!", "^cat/dog/other")}')
-
-# *n             -> Alpha string (only letters, spaces and hyphens, without accent)
-# *d             -> Any integer
-# *f             -> Any float
-print(f'-- {Input("- Normalized string : ", "- Incorrect value !!", "*n")}')
-print(f'-- {Input("- Any integer : ", "- Incorrect value !!", "*d")}')
-print(f'-- {Input("- Any float : ", "- Incorrect value !!", "*f")}')
-
-# path           -> Existing path (file or directory)
-# dir            -> Existing directory
-# name|ext       -> Existing file with exstention (use * on both parts for any)
-print(f'-- {Input("- An existing path : ", "- Incorrect value !!", "path")}')
-print(f'-- {Input("- An existing directory : ", "- Incorrect value !!", "dir")}')
-print(f'-- {Input("- An existing file : ", "- Incorrect value !!", "*|*")}')
-print(f'-- {Input("- An existing text file : ", "- Incorrect value !!", "*|txt")}')
-print(f'-- {Input("- An existing file with name = hello : ", "- Incorrect value !!", "hello|*")}')
