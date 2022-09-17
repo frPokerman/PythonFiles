@@ -19,9 +19,9 @@ def Input(askMessage, errorMessage, authMode):
             cdn = authMode[0] == "^"
             for auth in maybe(cdn, authMode[1:], authMode).split("/"):
                 if auth == response:
-                    return response
+                    return auth
                 elif not cdn and response.lower() == auth.lower()[:len(response)]:
-                    return response
+                    return auth
         elif (".." in authMode and authMode.replace("..", "") != "") or ("..." in authMode and authMode.replace("...", "") != ""):
             points = maybe(".." in authMode and not "..." in authMode, "..", "...")
             min = "null"
